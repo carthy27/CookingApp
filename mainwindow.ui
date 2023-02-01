@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>580</y>
+      <x>460</x>
+      <y>330</y>
       <width>93</width>
       <height>29</height>
      </rect>
@@ -27,14 +27,30 @@
      <string>Dinner</string>
     </property>
    </widget>
-   <widget class="QListView" name="listView">
+   <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>90</y>
-      <width>256</width>
-      <height>192</height>
+      <x>180</x>
+      <y>30</y>
+      <width>88</width>
+      <height>24</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Milk</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>88</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>eggs</string>
     </property>
    </widget>
   </widget>
