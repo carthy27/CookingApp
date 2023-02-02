@@ -29,8 +29,14 @@ private slots:
     void on_checkBox_5_clicked();
 
 
+    void on_pushButton_2_clicked();
+
+    void on_listWidget_currentRowChanged(int currentRow);
+
 private:
     Ui::MainWindow *ui;
+
+    int mnSelected= -1;
 };
 
 class Ingredient {

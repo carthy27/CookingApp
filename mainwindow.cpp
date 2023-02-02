@@ -68,3 +68,20 @@ void MainWindow::on_checkBox_5_clicked()
 }
 
 
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    if(mnSelected != -1){
+    QListWidgetItem *it= ui->listWidget->takeItem(mnSelected);
+    delete it;
+
+    ui->listWidget->setCurrentRow(-1);
+    }
+}
+
+
+void MainWindow::on_listWidget_currentRowChanged(int currentRow)
+{
+    mnSelected = currentRow;
+}
+
