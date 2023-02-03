@@ -17,11 +17,19 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+class Ingredient
+
+
 //this is for the dinner button
 void MainWindow::on_pushButton_clicked()
 {
     QMessageBox::information(this,"Dinner","This is whats for dinner");
 }
+
+//add the item to a vector so we can decide what recipe to give the user
+
 
 
 

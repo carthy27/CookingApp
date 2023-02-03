@@ -43,38 +43,34 @@ private:
     int mnSelected= -1;
 };
 
-
-class Ingredient {
-    public:
-    std::vector< QString > arr ;
-    QString name ;
+    class Ingredient {
 
 
-    void boob(){
-        QString str;
-        for(QString x : arr){
+        public:
 
-            str.append(x);
-            str.append(", ");
-    }
-    }
+        Ingredient(QString name, int MacroType, int amount );
 
+        QString getName(){return name ; }
+        int getMacroType(){return MacroType ;}
+        int getAmount(){return amount ; }
+    };
 
-};
-
-class MacroType{
-
-};
-
-class Recipe {
-
-    public:
-    QString name;
+    class MacroType{
 
 
+    };
 
-    friend class MacroType;
-};
+    class Recipe {
+        QString name;
+
+        public:
+        Recipe(vector<Ingredient> x);
+        void createRecipe(vector<Ingredient> x){return recipe ;}
+        void showSteps(Recipe){return steps;}
+        QString getMacros(){return macros;}
+
+    };
+
 
 
 #endif // MAINWINDOW_H
