@@ -33,16 +33,22 @@ private slots:
 
     void on_listWidget_currentRowChanged(int currentRow);
 
+    void on_pushButton_3_clicked();
+
+
+
 private:
     Ui::MainWindow *ui;
 
     int mnSelected= -1;
 };
 
+
 class Ingredient {
     public:
     std::vector< QString > arr ;
     QString name ;
+
 
     void boob(){
         QString str;
@@ -53,14 +59,21 @@ class Ingredient {
     }
     }
 
+
+};
+
+class MacroType{
+
 };
 
 class Recipe {
+
     public:
     QString name;
 
 
 
+    friend class MacroType;
 };
 
 
