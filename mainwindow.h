@@ -1,34 +1,23 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 #include <vector>
 #include <QMessageBox>
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
 private slots:
-
     void on_pushButton_clicked();
-
 //eggs
     void on_checkBox_2_clicked();
-
     void on_checkBox_clicked();
-
     void on_checkBox_5_clicked();
-
-
     void on_pushButton_2_clicked();
 
     void on_listWidget_currentRowChanged(int currentRow);
@@ -43,34 +32,37 @@ private:
     int mnSelected= -1;
 };
 
-    class Ingredient {
+
+class Ingredient {
+    public:
+    std::vector< QString > arr ;
+    QString name ;
 
 
-        public:
-
-        Ingredient(QString name, int MacroType, int amount );
-
-        QString getName(){return name ; }
-        int getMacroType(){return MacroType ;}
-        int getAmount(){return amount ; }
-    };
-
-    class MacroType{
+    void boob(){
+        QString str;
+        for(QString x : arr){
+            str.append(x);
+            str.append(", ");
+    }
+    }
 
 
-    };
+};
 
-    class Recipe {
-        QString name;
+class MacroType{
 
-        public:
-        Recipe(vector<Ingredient> x);
-        void createRecipe(vector<Ingredient> x){return recipe ;}
-        void showSteps(Recipe){return steps;}
-        QString getMacros(){return macros;}
+};
 
-    };
+class Recipe {
 
+    public:
+    QString name;
+
+
+
+    friend class MacroType;
+};
 
 
 #endif // MAINWINDOW_H

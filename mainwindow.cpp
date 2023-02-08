@@ -19,9 +19,6 @@ MainWindow::~MainWindow()
 }
 
 
-class Ingredient
-
-
 //this is for the dinner button
 void MainWindow::on_pushButton_clicked()
 {
