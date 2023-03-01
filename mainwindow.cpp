@@ -10,7 +10,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->checkBox->setChecked(true);
+    ui->checkBox->setChecked(false);
+    ui->checkBox_2->setChecked(false);
+    ui->checkBox_3->setChecked(false);
+    ui->checkBox_4->setChecked(false);
+    ui->checkBox_5->setChecked(false);
+
 }
 
 MainWindow::~MainWindow()
@@ -33,25 +38,22 @@ void MainWindow::on_pushButton_clicked()
 //check box for the egg
 void MainWindow::on_checkBox_2_clicked()
 {
-    if(ui->checkBox->isChecked()){
-        Ingredient egg;
-        egg.name = "Egg";
+    Ingredient egg;
+    egg.name = "Egg";
+    if(ui->checkBox_2->isChecked()){
         egg.arr.push_back(egg.name);
-        //QMessageBox::information(this,eggs.name,"Boob");
         ui->listWidget->addItem(egg.name);
-
     }
 }
 
 //check box for the milk
 void MainWindow::on_checkBox_clicked()
 {
+    Ingredient milk;
+    milk.name = "Milk";
     if(ui->checkBox->isChecked()){
-        Ingredient milk;
-        milk.name = "Milk";
         milk.arr.push_back(milk.name);
         //QMessageBox::information(this,milk.name,"Milk");
-        milk.boob();
         ui->listWidget->addItem(milk.name);
     }
 
@@ -60,34 +62,49 @@ void MainWindow::on_checkBox_clicked()
 //checkbox for the flour
 void MainWindow::on_checkBox_5_clicked()
 {
-    if(ui->checkBox->isChecked()){
-        Ingredient Flour;
-        Flour.name = "Flour";
+    Ingredient Flour;
+    Flour.name = "Flour";
+    if(ui->checkBox_5->isChecked()){
+
         Flour.arr.push_back(Flour.name);
         //QMessageBox::information(this,Flour.name,"worky");
         ui->listWidget->addItem(Flour.name);
     }
 }
-
-
-
-void MainWindow::on_pushButton_2_clicked()
+//vanilla
+void MainWindow::on_checkBox_4_clicked()
 {
-    QListWidgetItem *it= ui->listWidget->takeItem(mnSelected);
-    delete it;
+    Ingredient Vanilla;
+    Vanilla.name = "Vanilla";
+    if(ui->checkBox_4->isChecked()){
 
+        Vanilla.arr.push_back(Vanilla.name);
+        //QMessageBox::information(this,Flour.name,"worky");
+        ui->listWidget->addItem(Vanilla.name);
+    }
 }
-
-
-void MainWindow::on_listWidget_currentRowChanged(int currentRow)
+//Sugar
+void MainWindow::on_checkBox_3_clicked()
 {
-    mnSelected = currentRow;
+    Ingredient Sugar;
+    Sugar.name = "Sugar";
+    if(ui->checkBox_3->isChecked()){
+
+        Sugar.arr.push_back(Sugar.name);
+        //QMessageBox::information(this,Flour.name,"worky");
+        ui->listWidget->addItem(Sugar.name);
+    }
 }
 
 
 void MainWindow::on_pushButton_3_clicked()
 {
     ui->listWidget->clear();
+    ui->checkBox->setChecked(false);
+    ui->checkBox_2->setChecked(false);
+    ui->checkBox_3->setChecked(false);
+    ui->checkBox_4->setChecked(false);
+    ui->checkBox_5->setChecked(false);
 }
 
 

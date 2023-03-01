@@ -14,22 +14,17 @@ public:
     ~MainWindow();
 private slots:
     void on_pushButton_clicked();
-//eggs
-    void on_checkBox_2_clicked();
-    void on_checkBox_clicked();
-    void on_checkBox_5_clicked();
-    void on_pushButton_2_clicked();
-
-    void on_listWidget_currentRowChanged(int currentRow);
-
+    void on_checkBox_2_clicked();//egg
+    void on_checkBox_clicked();//milk
+    void on_checkBox_5_clicked();//vanilla
+    void on_checkBox_4_clicked();//flour
+    void on_checkBox_3_clicked();//sugar
     void on_pushButton_3_clicked();
-
 
 
 private:
     Ui::MainWindow *ui;
 
-    int mnSelected= -1;
 };
 
 
@@ -39,25 +34,15 @@ class Ingredient {
     QString name ;
 
 
-    void boob(){
-        QString str;
-        for(QString x : arr){
-            str.append(x);
-            str.append(", ");
-    }
-    }
-
 
 };
 
-class MacroType{
-
-};
 
 class Recipe {
 
     public:
     QString name;
+
 
 
 
