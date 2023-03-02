@@ -29,13 +29,69 @@ private:
 
 
 class Ingredient {
-    public:
-    std::vector< QString > arr ;
+
+public :
+
     QString name ;
+    int weight ;
+    int caloricV;
+    std::vector<QString> arr ;
+
+    int getWeightInGrams(){
+        return weight;
+    }
+
+    QString getName(){
+        return name;
+    }
+
+    void setName(QString objName){
+        name = objName;
+    }
+
+    virtual int getCalories() = 0;
+};
 
 
+class Egg : public Ingredient
+{
+    public:   
+
+    int getCalories(){
+        caloricV = getWeightInGrams() * 2 ;
+        return caloricV;
+    }
+};
+
+class Milk : public Ingredient
+{
+public :
+    int getCalories(){
+        caloricV = getWeightInGrams() * 0.6;
+        return caloricV;
+    }
 
 };
+
+class Sugar : public Ingredient
+{
+public :
+    int getCalories(){
+        caloricV = getWeightInGrams() * 4;
+        return caloricV;
+    }
+};
+
+class Flour : public Ingredient
+{
+public :
+    int getCalories(){
+        caloricV = getWeightInGrams() * 4 ;
+    }
+
+};
+
+
 
 
 class Recipe {
