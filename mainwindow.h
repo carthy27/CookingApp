@@ -28,14 +28,24 @@ private:
 };
 
 
-class Ingredient {
+class Ingredient : public QObject {
 
 public :
-
+    QString mainMacro;
     QString name ;
     int weight ;
     int caloricV;
     std::vector<QString> arr ;
+
+    Ingredient();
+
+    Ingredient (QString objName, QString objMainMacro , int objCaloricV , int objWeight){
+        name = objName;
+
+        mainMacro = objMainMacro;
+
+        caloricV = objCaloricV ;
+    }
 
     int getWeightInGrams(){
         return weight;
@@ -45,8 +55,16 @@ public :
         return name;
     }
 
+    void setmainMacro(QString objMacro){
+        mainMacro = objMacro;
+    }
+
     void setName(QString objName){
         name = objName;
+    }
+
+    void setWeight(int objWeight){
+        weight = objWeight;
     }
 
     virtual int getCalories() = 0;
@@ -55,12 +73,17 @@ public :
 
 class Egg : public Ingredient
 {
-    public:   
-
-    int getCalories(){
-        caloricV = getWeightInGrams() * 2 ;
-        return caloricV;
+    public:
+    int caloricV;
+    int weight;
+    Egg(){
+        Ingredient("Egg", "Protein", getCalories();,  )
     }
+    void getCalories(){
+        caloricV = getWeightInGrams() * 2 ;
+    }
+
+
 };
 
 class Milk : public Ingredient
@@ -84,12 +107,36 @@ public :
 
 class Flour : public Ingredient
 {
-public :
-    int getCalories(){
-        caloricV = getWeightInGrams() * 4 ;
-    }
+public:
+    QString macro = "Carbohydrate";
+    setmainMacro(macro);
 
 };
+
+class WholeF : public Flour
+{
+    int getCalories(){
+        caloricV = getWeightInGrams() * 3.4;
+        return caloricV ;
+    }
+};
+
+class selfRFlour : public Flour {
+
+    int getCalories(){
+        caloricV = getWeightInGrams() * 3.54;
+        return caloricV ;
+    }
+};
+
+class semolina : public Flour {
+
+    int getCalories(){
+        caloricV = getWeightInGrams() *3.6 ;
+        return caloricV;
+    }
+};
+
 
 
 
