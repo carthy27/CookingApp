@@ -39,35 +39,36 @@ public :
 
     Ingredient();
 
-    Ingredient (QString objName, QString objMainMacro , int objCaloricV , int objWeight){
-        name = objName;
-
-        mainMacro = objMainMacro;
-
-        caloricV = objCaloricV ;
+    Ingredient(QString mainMacro){
+        mainMacro = this-> mainMacro;
     }
 
-    int getWeightInGrams(){
-        return weight;
+    Ingredient (QString name, QString objMainMacro){
+        name = this->name;
+
+        mainMacro = this-> mainMacro;
+
     }
 
-    QString getName(){
-        return name;
-    }
+//    int getWeightInGrams(){
+//        return weight;
+//    }
 
-    void setmainMacro(QString objMacro){
-        mainMacro = objMacro;
-    }
+//    QString getName(){
+//        return name;
+//    }
 
-    void setName(QString objName){
-        name = objName;
-    }
+//    void setmainMacro(QString objMacro){
+//        mainMacro = objMacro;
+//    }
 
-    void setWeight(int objWeight){
-        weight = objWeight;
-    }
+//    void setName(QString objName){
+//        name = objName;
+//    }
 
-    virtual int getCalories() = 0;
+//    void setWeight(int objWeight){
+//        weight = objWeight;
+//    }
 };
 
 
@@ -76,11 +77,10 @@ class Egg : public Ingredient
     public:
     int caloricV;
     int weight;
-    Egg(){
-        Ingredient("Egg", "Protein", getCalories();,  )
-    }
-    void getCalories(){
-        caloricV = getWeightInGrams() * 2 ;
+    Egg(QString name, QString mainMacro, int caloricV, int weight) :
+        Ingredient("egg", "protein"){
+        caloricV = weight * 2;
+        weight = this->weight;
     }
 
 
@@ -89,9 +89,10 @@ class Egg : public Ingredient
 class Milk : public Ingredient
 {
 public :
-    int getCalories(){
-        caloricV = getWeightInGrams() * 0.6;
-        return caloricV;
+    Milk(QString mainMacro, int caloricV, int weight) :
+        Ingredient("Milk", "protein"){
+        caloricV = weight * 2;
+        weight = this->weight;
     }
 
 };
@@ -99,26 +100,30 @@ public :
 class Sugar : public Ingredient
 {
 public :
-    int getCalories(){
-        caloricV = getWeightInGrams() * 4;
-        return caloricV;
+    Sugar(QString mainMacro, int caloricV, int weight) :
+        Ingredient("Sugar", "Carbohydrate"){
+        caloricV = weight * 2;
+        weight = this->weight;
     }
 };
 
 class Flour : public Ingredient
 {
 public:
-    QString macro = "Carbohydrate";
-    setmainMacro(macro);
+        Flour(QString name,QString mainMacro, int caloricV, int weight) :
+        Ingredient("Carbohydrate"){
+
+        weight = this->weight;
+    }
 
 };
 
 class WholeF : public Flour
 {
-    int getCalories(){
-        caloricV = getWeightInGrams() * 3.4;
-        return caloricV ;
-    }
+    WholeF(QString name, QString mainMacro, int caloricV, int weight) :
+        Ingredient("Whole Flour", "Carbohydrate"){
+        caloricV = weight * 3.6;
+        }
 };
 
 class selfRFlour : public Flour {
