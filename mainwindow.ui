@@ -33,7 +33,7 @@
      <item>
       <widget class="QCheckBox" name="checkBox_5">
        <property name="text">
-        <string>Flour</string>
+        <string>WholeF</string>
        </property>
       </widget>
      </item>
