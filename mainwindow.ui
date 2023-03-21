@@ -38,6 +38,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QCheckBox" name="checkBox_7">
+       <property name="text">
+        <string>Self Raising Flour</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QCheckBox" name="checkBox_5">
        <property name="text">
         <string>WholeF</string>
@@ -111,7 +118,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>150</y>
+      <y>90</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -132,7 +139,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <rect>
       <x>200</x>
       <y>450</y>
-      <width>81</width>
+      <width>131</width>
       <height>21</height>
      </rect>
     </property>
@@ -178,6 +185,61 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <width>371</width>
       <height>201</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>281</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>Amount in grams.</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="AmountInGrams"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QListWidget" name="listWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>190</y>
+      <width>51</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>430</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>460</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Total Calories</string>
     </property>
    </widget>
   </widget>

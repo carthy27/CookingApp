@@ -24,6 +24,14 @@ private slots:
 
     void on_checkBox_6_clicked();
 
+    void on_checkBox_7_clicked();
+
+    void on_AmountInGrams_valueChanged(double arg1);
+
+    //void on_listWidget_3_itemEntered(QListWidgetItem *item);
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 

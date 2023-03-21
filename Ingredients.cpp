@@ -4,5 +4,6 @@
 #include <QtGui>
 #include <QMessageBox>
 #include<QCheckBox>
+#include "Ingredients.h"
 
 
