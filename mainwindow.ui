@@ -31,6 +31,13 @@
       <enum>QLayout::SetMinimumSize</enum>
      </property>
      <item>
+      <widget class="QCheckBox" name="checkBox_6">
+       <property name="text">
+        <string>Semolina</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QCheckBox" name="checkBox_5">
        <property name="text">
         <string>WholeF</string>

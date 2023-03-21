@@ -22,6 +22,8 @@ private slots:
     void on_pushButton_3_clicked();
 
 
+    void on_checkBox_6_clicked();
+
 private:
     Ui::MainWindow *ui;
 

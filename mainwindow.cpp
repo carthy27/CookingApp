@@ -1,10 +1,12 @@
-#include "mainwindow.h"
+ #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "Ingredients.h"
 #include <QtCore>
 #include <QtGui>
 #include <QMessageBox>
 #include<QCheckBox>
+
+bool clear = true;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -49,12 +51,12 @@ void MainWindow::on_checkBox_2_clicked()
 //check box for the milk
 void MainWindow::on_checkBox_clicked()
 {
-    Milk milk(20,20) ;
-    milk.name = "Milk";
+
     if(ui->checkBox->isChecked()){
-        milk.arr.push_back(milk.name);
+        Milk milk(20,20) ;
+        milk.arr.push_back(milk.getName());
         //QMessageBox::information(this,milk.name,"Milk");
-        ui->listWidget->addItem(milk.name);
+        ui->listWidget->addItem(milk.getName());
     }
 
 }
@@ -62,13 +64,12 @@ void MainWindow::on_checkBox_clicked()
 //checkbox for the flour
 void MainWindow::on_checkBox_5_clicked()
 {
-    WholeF wholeF(2,2);
-    wholeF.name = "Whole Flour";
-    if(ui->checkBox_5->isChecked()){
 
-        wholeF.arr.push_back(wholeF.name);
+    if(ui->checkBox_5->isChecked()){
+        WholeF wholeF(2,2);
+        wholeF.arr.push_back(wholeF.getName());
         //QMessageBox::information(this,Flour.name,"worky");
-        ui->listWidget->addItem(wholeF.name);
+        ui->listWidget->addItem(wholeF.getName());
     }
 }
 //vanilla
@@ -89,22 +90,32 @@ void MainWindow::on_checkBox_3_clicked()
     Sugar sugar(20,20) ;
     if(ui->checkBox_3->isChecked()){
 
-        sugar.arr.push_back(sugar.name);
+        sugar.arr.push_back(sugar.getName());
         //QMessageBox::information(this,Flour.name,"worky");
-        ui->listWidget->addItem(sugar.name);
+        ui->listWidget->addItem(sugar.getName());
     }
+}
+void MainWindow::on_checkBox_6_clicked()
+{
+    if(ui->checkBox_6->isChecked()){
+    Semolina semolina(20,20) ;
+        semolina.arr.push_back(semolina.getName());
+        //QMessageBox::information(this,Flour.name,"worky");
+        ui->listWidget->addItem(semolina.getName());
+    }
+
 }
 
 
 void MainWindow::on_pushButton_3_clicked()
 {
+    clear = false;
     ui->listWidget->clear();
-    ui->checkBox->setChecked(false);
-    ui->checkBox_2->setChecked(false);
-    ui->checkBox_3->setChecked(false);
-    ui->checkBox_4->setChecked(false);
-    ui->checkBox_5->setChecked(false);
+    ui->checkBox->setChecked(clear);
+    ui->checkBox_2->setChecked(clear);
+    ui->checkBox_3->setChecked(clear);
+    ui->checkBox_4->setChecked(clear);
+    ui->checkBox_5->setChecked(clear);
+    ui->checkBox_6->setChecked(clear);
 }
-
-
 

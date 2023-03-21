@@ -4,6 +4,7 @@
 
 class Ingredient : public QObject {
 
+
 public :
     QString mainMacro;  //main macro
     QString name ;      // name
@@ -13,16 +14,17 @@ public :
 
     Ingredient(); //def const
 
-    Ingredient(QString mainMacro){ //for the flour
-    mainMacro = this-> mainMacro;
-    }
+
+    Ingredient(QString mainMacro){
+        this -> mainMacro = mainMacro;
+    };
 
     Ingredient (QString name, QString mainMacro){ //for all the other ingredients
         this -> name = name;
         this -> mainMacro = mainMacro;
     }
 
-    QString getName(){
+    virtual QString getName(){
         return name;
     }
 
@@ -103,26 +105,20 @@ public :
 class Flour : public Ingredient
 {
 public:
-        Flour(QString name, QString mainMacro) :
-        Ingredient("Carbohydrate" ){
-
+        Flour(QString name, int weight) :
+        Ingredient(name,"Carbohydrate" ){
+            //this->ingName = name;
+            this-> weight = weight;
     }
-
-        virtual int calcCaloricV(){
-            int caloricV;
-            caloricV = weight * 4;
-            return caloricV;
-        }
-
 };
+
 
 class WholeF : public Flour
 {
 public:
     WholeF(int caloricV, int weight) :
-        Flour("Whole Flour", "Carbohydrate"){
+        Flour("Whole Flour",weight){
         this -> caloricV = calcCaloricV();
-        this->weight = weight ;
 
     }
 
@@ -135,9 +131,8 @@ public:
 
 class selfRFlour : public Flour {
     selfRFlour(int caloricV, int weight) :
-        Flour("Self Raising Flour", "Carbohydrate"){
-        weight = this->weight ;
-        caloricV = calcCaloricV();
+        Flour("Self Raising Flour", weight){
+        this -> caloricV = calcCaloricV();
         }
 
     int calcCaloricV(){
@@ -149,12 +144,10 @@ class selfRFlour : public Flour {
 };
 
 class Semolina : public Flour {
-
+public:
     Semolina(int caloricV, int weight) :
-        Flour("Semolina", "Carbohydrate"){
-
-        weight = this->weight ;
-        caloricV = calcCaloricV();
+        Flour("Semolina", weight){
+        this->caloricV = calcCaloricV();
         }
 
     int calcCaloricV(){
