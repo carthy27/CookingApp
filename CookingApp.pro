@@ -10,11 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     Ingredients.cpp \
+    Recipe.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Ingredients.h \
+    Instructions.h \
+    Recipe.h \
     mainwindow.h
 
 FORMS += \

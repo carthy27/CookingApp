@@ -1,7 +1,8 @@
 #ifndef INGREDIENTS_H
 #define INGREDIENTS_H
 
-#include<numeric>
+#include<numeric> //for accumulate
+#include <algorithm>
 
 class Ingredient : public QObject {
 
@@ -34,15 +35,13 @@ public :
     void setWeight(int weight){
         this->weight = weight;
     }
-
-    double getTotalCal(){
-       listTotalCal = std::accumulate(totalCal.begin(),totalCal.end(),0);
-       return listTotalCal;
+/*
+    Ingredient operator+(const Ingredient& x,const Ingredient& y){
+        return x.calcCaloricV(x.weight) + y.calcCaloricV(y.weight);
     }
-
-
-
+*/
     virtual int calcCaloricV(int x)=0; //this makes ingredient an abstract class allows each ingredients calorie value to be different
+    friend class Recipe ;
 };
 
 class Vanilla: public Ingredient
@@ -124,6 +123,8 @@ public:
             //this->ingName = name;
             this-> weight = weight;
     }
+
+
 };
 
 
@@ -171,15 +172,6 @@ public:
         caloricV = weightX * 3.6;
         return caloricV;
     }
-
-};
-
-
-
-
-
-class Recipe {
-
 
 };
 

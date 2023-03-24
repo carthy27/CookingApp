@@ -13,7 +13,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private slots:
-    void on_pushButton_clicked();
+   // void on_pushButton_clicked();
     void on_checkBox_2_clicked();//egg
     void on_checkBox_clicked();//milk
     void on_checkBox_5_clicked();//vanilla
@@ -31,6 +31,8 @@ private slots:
     //void on_listWidget_3_itemEntered(QListWidgetItem *item);
 
     void on_pushButton_2_clicked();
+
+    //void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
