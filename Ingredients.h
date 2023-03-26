@@ -1,17 +1,21 @@
 #ifndef INGREDIENTS_H
 #define INGREDIENTS_H
 
-#include<numeric> //for accumulate
+#include <numeric> //for accumulate
 #include <algorithm>
+#include <QObject>
+#include <QString>
 
-class Ingredient : public QObject {
-
-
-public :
+class Ingredient : public QObject
+{
+protected:
     QString mainMacro;  //main macro
     QString name ;      // name
     int weight ;        //weight
-    int caloricV;       //value of object in calories
+    int caloricV;
+
+
+public :
     std::vector<QString> arr ; //a vector of all the current ingredients
     std::vector<double> totalCal;
     int listTotalCal ;
@@ -19,45 +23,30 @@ public :
     Ingredient(); //def const
 
 
-    Ingredient(QString mainMacro){
-        this -> mainMacro = mainMacro;
-    }
+    Ingredient(QString mainMacro);
 
-    Ingredient (QString name, QString mainMacro){ //for all the other ingredients
-        this -> name = name;
-        this -> mainMacro = mainMacro;
-    }
+    Ingredient(QString name, QString mainMacro);
 
-    QString getName(){
-        return name;
-    }
+    ~Ingredient();
 
-    void setWeight(int weight){
-        this->weight = weight;
-    }
+    QString getName();
+    void setWeight(int weight);
 /*
     Ingredient operator+(const Ingredient& x,const Ingredient& y){
         return x.calcCaloricV(x.weight) + y.calcCaloricV(y.weight);
     }
 */
-    virtual int calcCaloricV(int x)=0; //this makes ingredient an abstract class allows each ingredients calorie value to be different
+    virtual int calcCaloricV(int x) = 0; //this makes ingredient an abstract class allows each ingredients calorie value to be different
     friend class Recipe ;
 };
+
 
 class Vanilla: public Ingredient
 {
 public:
-Vanilla(int caloricV, int weight) :
-    Ingredient("Vanilla", "NULL"){
-    this->caloricV=caloricV;
-    this->weight = weight;
-}
+Vanilla(int caloricV, int weight);
 
-int calcCaloricV(int weightX){
-    int caloricV;
-    caloricV = weightX * 3;
-    return caloricV;
-}
+int calcCaloricV(int weightX);
 
 
 };
@@ -66,18 +55,9 @@ int calcCaloricV(int weightX){
 class Egg : public Ingredient
 {
     public:
-    Egg(int caloricV, int weight) :
-        Ingredient("Egg", "protein"){
-        this->caloricV = caloricV;
-        this->weight = weight;
+    Egg(int caloricV, int weight);
 
-    }
-
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 2;
-        return caloricV;
-    }
+    int calcCaloricV(int weightX) override;
 
 
 };
@@ -85,45 +65,24 @@ class Egg : public Ingredient
 class Milk : public Ingredient
 {
 public :
-    Milk(int caloricV, int weight) :
-        Ingredient("Milk", "protein"){
-        this-> caloricV = caloricV;
-        this-> weight = weight;
+    Milk(int caloricV, int weight);
 
-    }
 
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 3.6;
-        return caloricV;
-    }
+    int calcCaloricV(int weightX);
 };
 
 class Sugar : public Ingredient
 {
 public :
-    Sugar(int caloricV, int weight) :
-        Ingredient("Sugar", "Carbohydrate"){
-        this->weight = weight;
-        this->caloricV = caloricV;
-    }
+    Sugar(int caloricV, int weight) ;
 
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 4;
-        return caloricV;
-    }
+    int calcCaloricV(int weightX);
 };
 
 class Flour : public Ingredient
 {
 public:
-        Flour(QString name, int weight) :
-        Ingredient(name,"Carbohydrate" ){
-            //this->ingName = name;
-            this-> weight = weight;
-    }
-
+        Flour(QString name, int weight);
 
 };
 
@@ -131,47 +90,24 @@ public:
 class WholeF : public Flour
 {
 public:
-    WholeF(int caloricV, int weight) :
-        Flour("Whole Flour",weight){
-        this -> caloricV = caloricV;
+    WholeF(int caloricV, int weight) ;
 
-    }
-
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 3.6;
-        return caloricV;
-    }
+    int calcCaloricV(int weightX);
 };
 
 class selfRFlour : public Flour {
 public:
-    selfRFlour(int caloricV, int weight) :
-        Flour("Self Raising Flour", weight){
-        this -> caloricV = caloricV;
-        }
+    selfRFlour(int caloricV, int weight) ;
 
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 3.54;
-        return caloricV;
-    }
-
+    int calcCaloricV(int weightX);
 
 };
 
 class Semolina : public Flour {
 public:
-    Semolina(int caloricV, int weight) :
-        Flour("Semolina", weight){
-        this->caloricV = caloricV;
-        }
+    Semolina(int caloricV, int weight);
 
-    int calcCaloricV(int weightX){
-        int caloricV;
-        caloricV = weightX * 3.6;
-        return caloricV;
-    }
+    int calcCaloricV(int weightX);
 
 };
 

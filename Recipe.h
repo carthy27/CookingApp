@@ -3,6 +3,8 @@
 
 #include "Instructions.h"
 
+using namespace Instructions ;
+
 class Recipe{
 private :
     QString name;

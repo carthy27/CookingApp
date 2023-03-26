@@ -1,7 +1,7 @@
 #ifndef INSTRUCTIONS_H
 #define INSTRUCTIONS_H
 
-
+namespace Instructions{
 class Instructions{
 private:
     int link;
@@ -21,6 +21,7 @@ public :
     //void setRecipeInstructions( Recipe z,int y){ z.instructions = inst[y]; }
     friend class Recipe;
 };
+}
 
 
 
