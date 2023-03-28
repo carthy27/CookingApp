@@ -15,19 +15,33 @@
 
     void Recipe::setInstructions(int i){
 
-        instruction = y.getInstructions();
+        Rinstruction = y.getInstructions();
 
     }
+
+    QString Recipe::getBread(){
+        return ing[BREAD];
+    }
+
+    QString Recipe::getCupCakes(){
+        return ing[CUPCAKES];
+    }
+
+
 
     QString Recipe::getName()const{
     return name;
     }
 
     QString Recipe::displayInstructions(){
-        return instruction;
+        return Rinstruction;
+    }
+
+    QString Recipe::getIngAt(int i){
+        return ing[i];
     }
 
     QString Recipe::getRecipes(){
 
-        return name + "/n" + instruction;
+        return name + "/n" + Rinstruction;
     }

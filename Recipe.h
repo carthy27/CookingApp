@@ -18,16 +18,17 @@ class Recipe{
 private :
     QString name;
     int option;
-    QString instruction;
-    std::vector<Ingredient> ing;
+    QString Rinstruction;
+    std::vector<QString> ing;
 public :
     Recipe(QString name, int inst);
+    QString getBread();
+    QString getCupCakes();
     void setName(QString name);
     void setInstructions(int option);
     QString getName() const ;
     QString displayInstructions();
-    Ingredient getIngAt();
-    std::vector<Ingredient> getIngs();
+    QString getIngAt(int i);
     QString getRecipes();
 
 

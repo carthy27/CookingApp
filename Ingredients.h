@@ -31,6 +31,7 @@ public :
     ~Ingredient();
 
     QString getName();
+    QString getArr();
     void setWeight(int weight);
 /*
     Ingredient operator+(const Ingredient& x,const Ingredient& y){
@@ -39,6 +40,7 @@ public :
 */
     virtual int calcCaloricV(int x) = 0; //this makes ingredient an abstract class allows each ingredients calorie value to be different
     friend class Recipe ;
+    friend class mainwindow;
 };
 
 

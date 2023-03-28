@@ -27,6 +27,14 @@ Ingredient::Ingredient(QString mainMacro){
     void Ingredient::setWeight(int weight){
         this->weight = weight;
     }
+
+    QString Ingredient::getArr(QString comp){
+        for(int i =0; i < sizeof(arr)/sizeof(QString); i++  ){
+            if(comp == arr[i]){
+
+            }
+        }
+    }
 /*
     Ingredients operator+(const Ingredients& x,const Ingredients& y){
         return x.calcCaloricV(x.weight) + y.calcCaloricV(y.weight);
