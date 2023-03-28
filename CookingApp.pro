@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     Ingredients.cpp \
+    Instructions.cpp \
     Recipe.cpp \
     main.cpp \
     mainwindow.cpp

@@ -1,23 +1,33 @@
 #include <QtCore>
 #include <QtGui>
 #include "Instructions.h"
+#include "Recipe.h"
+    Instructions y(0);
+    Recipe::Recipe(QString name, int inst){
+        this -> name = name;
+        this -> option = inst;
 
-class Recipe{
-private :
-    QString name;
-    QString instructions;
-    int whichRecipe;
-public :
-    Recipe(QString name, Instructions inst){
+    }
+
+    void Recipe::setName(QString name){
         this -> name = name;
     }
 
-     QString getRecipe(std::vector<QString> arr){
+    void Recipe::setInstructions(int i){
 
-        return name + "/n" + instructions;
+        instruction = y.getInstructions();
+
     }
-    QString getName() const {return name;}
-    QString displayInstructions() const {return instructions;}
 
-    friend class Instructions;
-};
+    QString Recipe::getName()const{
+    return name;
+    }
+
+    QString Recipe::displayInstructions(){
+        return instruction;
+    }
+
+    QString Recipe::getRecipes(){
+
+        return name + "/n" + instruction;
+    }

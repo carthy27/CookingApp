@@ -8,6 +8,7 @@
 
 class Ingredient : public QObject
 {
+
 protected:
     QString mainMacro;  //main macro
     QString name ;      // name
@@ -73,6 +74,7 @@ public :
 
 class Sugar : public Ingredient
 {
+
 public :
     Sugar(int caloricV, int weight) ;
 
@@ -81,6 +83,7 @@ public :
 
 class Flour : public Ingredient
 {
+
 public:
         Flour(QString name, int weight);
 
@@ -89,6 +92,7 @@ public:
 
 class WholeF : public Flour
 {
+
 public:
     WholeF(int caloricV, int weight) ;
 
@@ -96,6 +100,7 @@ public:
 };
 
 class selfRFlour : public Flour {
+
 public:
     selfRFlour(int caloricV, int weight) ;
 
@@ -104,6 +109,7 @@ public:
 };
 
 class Semolina : public Flour {
+
 public:
     Semolina(int caloricV, int weight);
 

@@ -4,7 +4,6 @@
 #include <QtGui>
 using namespace std;
 
-
 class Instructions{
 private:
     int link;
@@ -15,12 +14,14 @@ private:
                       "https://spunout.ie/health/recipes/pancakes","https://www.bbcgoodfood.com/recipes/perfect-scrambled-eggs-recipe"};
 public :
 
-    Instructions(int i);
 
-    QString getInstructions();
+    Instructions(int i ):link(i){
+        this -> instruction = inst[i];
+    }
 
-    int getLink();
+    QString getInstructions(){return instruction;}
 
+    int getLink(){return link;}
 
     friend class Recipe;
 };
