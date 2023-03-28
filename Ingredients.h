@@ -31,7 +31,7 @@ public :
     ~Ingredient();
 
     QString getName();
-    QString getArr();
+    QString getArr(QString comp);
     void setWeight(int weight);
 /*
     Ingredient operator+(const Ingredient& x,const Ingredient& y){

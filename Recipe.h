@@ -31,6 +31,8 @@ public :
     QString getIngAt(int i);
     QString getRecipes();
 
+friend class mainwindow;
+friend class Ingredients;
 
 };
 

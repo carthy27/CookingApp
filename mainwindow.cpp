@@ -1,6 +1,7 @@
  #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "Ingredients.h"
+#include "Recipe.h"
 #include <QtCore>
 #include <QtGui>
 #include <QMessageBox>
@@ -10,12 +11,12 @@
 #define YIng true
 #define ZIng false
 
+
 bool Ing = YIng;
-
-
 bool clear = true;  //global functions
 int weightInGs = 0;
 int totalCal;
+Egg egg(egg.calcCaloricV(weightInGs),weightInGs);
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -166,20 +167,32 @@ void MainWindow::on_pushButton_2_clicked()
     ui->lcdNumber->display(totalCal);
 }
 
-
 void MainWindow::on_pushButton_4_clicked()
 {
-
+    Recipe r("Bread",BREAD);
+    int nonp = 1;
+    int* one = &nonp;
     if(ui-> radioButton->isChecked()){
-        if(YIng && getArr(ui->listWidget->)){
+        if(Ing && ((int)(ui->listWidget->count())) >= *one ){
+            ui->listWidget_2->addItem(r.getBread());
+        }
+
+    }
+    if(ui->radioButton_2->isChecked()){
+        if(Ing && ((int)(ui->listWidget->count())) >= *one ){
+                ui->listWidget_2->addItem(r.getBread());
+}
+
+    }
+        //lunch options
+
+    if(ui->radioButton_3->isChecked()){
+        //breakfast Options
+            if(Ing && ((int)(ui->listWidget->count())) >= *one ){
+                ui->listWidget_2->addItem(r.getBread());
 
         }
     }
-    if(ui->radioButton_2->isChecked()){
-        //lunch options
-    }
-    if(ui->radioButton_3->isChecked()){
-        //breakfast Options
-    }
 }
+
 

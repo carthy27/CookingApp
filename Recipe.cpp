@@ -2,25 +2,29 @@
 #include <QtGui>
 #include "Instructions.h"
 #include "Recipe.h"
-    Instructions y(0);
+
+
     Recipe::Recipe(QString name, int inst){
         this -> name = name;
         this -> option = inst;
 
     }
 
+    Recipe bread("Bread",BREAD);
+    Recipe cupcakes("CupCakes",CUPCAKES);
+
+
     void Recipe::setName(QString name){
         this -> name = name;
     }
 
-    void Recipe::setInstructions(int i){
-
-        Rinstruction = y.getInstructions();
-
-    }
+//    void Recipe::setInstructions(int i){
+//        Rinstruction = y.getInstructions();
+//    }
 
     QString Recipe::getBread(){
-        return ing[BREAD];
+        Instructions i(BREAD);
+        return i.getInstructions() ;
     }
 
     QString Recipe::getCupCakes(){

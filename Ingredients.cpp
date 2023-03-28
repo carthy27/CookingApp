@@ -1,5 +1,6 @@
 #include "Ingredients.h"
 #include<numeric> //for accumulate
+#include "Recipe.h"
 #include <algorithm>
 #include <QObject>
 #include <QtCore>
@@ -31,7 +32,8 @@ Ingredient::Ingredient(QString mainMacro){
     QString Ingredient::getArr(QString comp){
         for(int i =0; i < sizeof(arr)/sizeof(QString); i++  ){
             if(comp == arr[i]){
-
+                Recipe r("bleh", 0);
+                return r.displayInstructions();
             }
         }
     }
