@@ -158,6 +158,7 @@ void MainWindow::on_pushButton_3_clicked()
     ui->checkBox_5->setChecked(clear);
     ui->checkBox_6->setChecked(clear);
     ui->checkBox_7->setChecked(clear);
+    ui->listWidget_2->clear();
 }
 
 
