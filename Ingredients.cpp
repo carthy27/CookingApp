@@ -50,6 +50,8 @@ Vanilla::Vanilla(int caloricV, int weight) :
     this->weight = weight;
 }
 
+Vanilla::~Vanilla(){
+}
 int Vanilla::calcCaloricV(int weightX){
     int caloricV;
     caloricV = weightX * 3;

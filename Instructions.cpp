@@ -2,7 +2,7 @@
 #include <QtCore>
 #include <QtGui>
 #include "Instructions.h"
-using namespace std;
+
 
 
 

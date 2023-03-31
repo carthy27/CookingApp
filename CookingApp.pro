@@ -12,6 +12,7 @@ SOURCES += \
     Ingredients.cpp \
     Instructions.cpp \
     Recipe.cpp \
+    exceptions.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -19,7 +20,9 @@ HEADERS += \
     Ingredients.h \
     Instructions.h \
     Recipe.h \
-    mainwindow.h
+    exceptions.h \
+    mainwindow.h \
+    namespaceInt.h
 
 FORMS += \
     mainwindow.ui

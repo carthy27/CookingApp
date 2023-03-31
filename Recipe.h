@@ -24,6 +24,7 @@ public :
     Recipe(QString name, int inst);
     QString getBread();
     QString getCupCakes();
+    QString getFtoast();
     void setName(QString name);
     void setInstructions(int option);
     QString getName() const ;

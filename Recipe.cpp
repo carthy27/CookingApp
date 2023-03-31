@@ -10,9 +10,6 @@
 
     }
 
-    Recipe bread("Bread",BREAD);
-    Recipe cupcakes("CupCakes",CUPCAKES);
-
 
     void Recipe::setName(QString name){
         this -> name = name;
@@ -28,8 +25,15 @@
     }
 
     QString Recipe::getCupCakes(){
-        return ing[CUPCAKES];
+        Instructions c(CUPCAKES);
+        return c.getInstructions();
     }
+
+    QString Recipe::getFtoast(){
+        Instructions f(FTOAST);
+        return f.getInstructions();
+    }
+
 
 
 

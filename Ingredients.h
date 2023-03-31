@@ -48,7 +48,7 @@ class Vanilla: public Ingredient
 {
 public:
 Vanilla(int caloricV, int weight);
-
+~Vanilla();
 int calcCaloricV(int weightX);
 
 
@@ -116,6 +116,7 @@ public:
     Semolina(int caloricV, int weight);
 
     int calcCaloricV(int weightX);
+
 
 };
 
